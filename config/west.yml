@@ -14,6 +14,6 @@ manifest:
     - name: zmk-fingerpunch-keyboards
       remote: sadekbaroudi
       revision: main
-      import: config/west.yaml
+      import: config/west.yml
   self:
     path: config
