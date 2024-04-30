@@ -1,0 +1,267 @@
+
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+// define layers
+#define _DEFAULT 0  // Colemak Dhm
+#define _LOWER 1
+#define _RAISE 2
+#define _STICKY 3
+
+// configure hold tap settings
+&lt {
+    flavor = "hold-preferred";
+};
+
+&mt {
+    tapping-term-ms = <150>;  // slightly faster to reduce wait before cmd click
+};
+
+&sl {
+    release-after-ms = <500>;  // basically leader timeout equivalent
+};
+
+// new behaviors for shift tap and mod on alphas
+// lmt: https://zmk.dev/docs/behaviors/hold-tap#example-use-cases based on toggle on tap, momentary on hold layers
+/ {
+    behaviors {
+        st: shift_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHIFT_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <120>;
+            bindings = <&kp>, <&kp>;
+        };
+        am: alpha_mod {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALPHA_MOD";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            retro-tap;
+        };
+        lmt: layer_mo_to {
+            compatible = "zmk,behavior-hold-tap";
+            label = "l_mo_to";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&to>;
+        };
+    };
+};
+
+// Combos
+// TODO: pull this into a separate import as in https://github.com/AlaaSaadAbdo/zmk-config
+
+#define COMBO_TERM 25
+
+/* Key index
+ 0  1  2  3  4         5  6  7  8  9
+10 11 12 13 14        15 16 17 18 19
+20 21 22 23 24        25 26 27 28 29
+        30 31 32    33 34 35         */
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_grave {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <0 1>;
+            bindings = <&kp GRAVE>;
+        };
+        combo_rbkt {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <1 2>;
+            bindings = <&kp RBKT>;
+        };
+        combo_lbkt {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <2 3>;
+            bindings = <&kp LBKT>;
+        };
+        combo_tilde {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <10 11>;
+            bindings = <&kp TILDE>;
+        };
+        combo_rpar {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <11 12>;
+            bindings = <&kp RPAR>;
+        };
+        combo_lpar {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <12 13>;
+            bindings = <&kp LPAR>;
+        };
+        combo_leader {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <20 21>;
+            bindings = <&sl _STICKY>;
+        };
+        combo_rbrc {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <21 22>;
+            bindings = <&kp RBRC>;
+        };
+        combo_lbrc {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <22 23>;
+            bindings = <&kp LBRC>;
+        };
+
+        combo_equal {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <6 7>;
+            bindings = <&kp EQUAL>;
+        };
+        combo_plus {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <7 8>;
+            bindings = <&kp PLUS>;
+        };
+        combo_semi {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <8 9>;
+            bindings = <&kp SEMI>;
+        };
+        combo_minus {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <16 17>;
+            bindings = <&kp MINUS>;
+        };
+        combo_under {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <17 18>;
+            bindings = <&kp UNDER>;
+        };
+        combo_colon {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <18 19>;
+            bindings = <&kp COLON>;
+        };
+        combo_bslh {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <26 27>;
+            bindings = <&kp BSLH>;
+        };
+        combo_pipe {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <27 28>;
+            bindings = <&kp PIPE>;
+        };
+        combo_cmdpal {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <28 29>;
+            bindings = <&kp LG(LS(P))>;
+        };
+    };
+};
+
+// define frequently used keyboard shortcuts
+
+// OS stuff
+#define EXPOSE  LC(UP)      // mission control (aka expose)
+#define OS_LOCK LG(LC(Q))   // lock screen
+#define SNIP    LG(LS(N4))  // screenshot portion of screen
+
+// text editing: cursor movement, text deletion
+#define MWL LA(LEFT)   // move cursor one word left
+#define MWR LA(RIGHT)  // move cursor one word right
+#define MLL LC(A)      // move cursor to beginning of line
+#define MLR LC(E)      // move cursor to end of line
+#define DWL LA(BSPC)   // delete one word left
+#define DWR LA(DEL)    // delete one word right
+#define DLL LC(U)      // delete to beginning of line
+#define DLR LC(K)      // delete to end of line
+
+// window management (OS native)
+#define WK_L LC(LEFT)  // go to workspace left
+#define WK_R LC(RIGHT) // go to workspace right
+
+// window management (via rectangle)
+#define SZ_L_13 LA(LC(D))      // resize window left 1/3
+#define SZ_C_13 LA(LC(F))      // resize window center 1/3
+#define SZ_R_13 LA(LC(G))      // resize window right 1/3
+#define SZ_L_23 LA(LC(E))      // resize window left 2/3
+#define SZ_R_23 LA(LC(T))      // resize window right 2/3
+#define SZ_L_12 LA(LC(LEFT))   // resize window left 1/2
+#define SZ_R_12 LA(LC(RIGHT))  // resize window right 1/2
+#define SZ_U_12 LA(LC(UP))     // resize window up 1/2
+#define SZ_D_12 LA(LC(DOWN))   // resize window down 1/2
+#define SZ_MAX  LA(LC(ENTER))  // resize window maximize
+#define THRW_L LG(LA(LC(LEFT)))   // throw to workspace left
+#define THRW_R LG(LA(LC(RIGHT)))  // throw to workspace right
+
+// cursor warp (via hammerspoon)
+#define FCS_L LS(LG(LA(LC(L))))  // warp cursor to display left
+#define FCS_R LS(LG(LA(LC(R))))  // warp cursor to display right
+
+// cursor warp (via warpd)
+#define WARPD LG(LA(X))  // hint mode
+
+// deprecated categories (mostly hammerspoon stuff):
+    // hammerspoon: alerts, emoji finder, quick app shortcuts
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            label = "BASE";
+// -----------------------------------------------------------------------------------------
+//      |  Q  |  W  |  F  |  P  |  B  |            |  J  |  L  |  U  |  Y  |  '  |
+//      |  A  |  R  |  S  |  T  |  G  |            |  M  |  N  |  E  |  I  |  O  |
+//      |  Z  |  X  |  C  |  D  |  V  |            |  K  |  H  |  ,  |  .  |  /  |
+//           taps   | ESC | TAB | BSP |            | SPC | ENT | DEL |
+//           holds  | GUI | LWR | SFT |            | SFT | RSE | GUI |
+            bindings = <
+    &am LCTRL Q &kp W &kp F &kp P &kp B             &kp J &kp L  &kp U     &kp Y   &kp APOS
+    &kp A       &kp R &kp S &kp T &kp G             &kp M &kp N  &kp E     &kp I   &kp O
+    &am LALT Z  &kp X &kp C &kp D &kp V             &kp K &kp H  &kp COMMA &kp DOT &kp FSLH
+    &mt LGUI ESC &lt _LOWER TAB &st LSHIFT BSPC     &st RSHIFT SPACE &lt _RAISE ENTER &mt RGUI DEL
+            >;
+        };
+
+        lower_layer {
+            label = "SYSNUM";
+            bindings = <
+   &kp LCTRL  &kp F4   &kp C_VOL_DN  &kp K_MUTE  &kp C_VOL_UP     &kp TAB  &kp N7  &kp N8  &kp N9  &kp PLUS
+   &kp LSHIFT &kp LALT &kp WK_L      &kp EXPOSE  &kp WK_R         &kp N0   &kp N4  &kp N5  &kp N6  &kp MINUS
+   &kp LGUI   &none    &kp C_PREV    &kp C_PP    &kp C_NEXT       &kp DOT  &kp N1  &kp N2  &kp N3  &kp FSLH
+                                &trans  &trans  &trans                &kp SPACE  &kp ENTER &kp DEL
+            >;
+        };
+
+        raise_layer {
+            label = "EDITOR";
+            bindings = <
+   &kp SZ_L_23 &kp SZ_L_13 &kp SZ_C_13 &kp SZ_R_13 &kp SZ_R_23      &kp DLL  &kp DWL  &kp DWR &kp DLR   &trans
+   &kp SZ_L_12 &kp SZ_D_12 &kp SZ_MAX  &kp SZ_U_12 &kp SZ_R_12      &kp LEFT &kp DOWN &kp UP  &kp RIGHT &trans
+   &kp THRW_L  &kp FCS_L   &kp WARPD   &kp FCS_R   &kp THRW_R       &kp MLL  &kp MWL  &kp MWR &kp MLR   &trans
+                           &kp ESC &kp TAB  &kp BSPC   &trans   &trans    &trans
+            >;
+        };
+
+        sticky_layer {
+            label = "LEADER";
+            bindings = <
+    &kp OS_LOCK  &none     &none  &none  &none      &none  &none  &none  &none  &bt BT_CLR
+    &none        &kp SNIP  &none  &none  &none      &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT
+    &bootloader  &none     &none  &none  &none      &none  &none  &none  &none  &none
+                           &none  &none  &none      &none  &none  &none
+            >;
+        };
+    };
+};
+
