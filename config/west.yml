@@ -14,5 +14,11 @@ manifest:
     - name: zmk-fingerpunch-keyboards
       remote: sadekbaroudi
       revision: main
+    - name: zmk-fingerpunch-vik
+      remote: sadekbaroudi
+      revision: main
+    - name: zmk-fingerpunch-controllers
+      remote: sadekbaroudi
+      revision: main
   self:
     path: config
