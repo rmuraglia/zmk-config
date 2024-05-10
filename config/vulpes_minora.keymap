@@ -254,7 +254,7 @@
             bindings = <
     &kp OS_LOCK  &none     &none  &none  &none      &none  &none  &none  &none  &bt BT_CLR
     &none        &kp SNIP  &none  &none  &none      &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT
-    &bootloader  &none     &none  &none  &none      &none  &none  &none  &none  &none
+    &bootloader  &none     &none  &none  &none      &none  &none  &none  &none  &bootloader
                            &none  &none  &none      &none  &none  &none
             >;
         };
