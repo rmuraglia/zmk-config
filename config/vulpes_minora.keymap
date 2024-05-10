@@ -265,7 +265,7 @@
     &kp LCTRL  &none     &none  &none  &none      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
     &kp LSHIFT &kp LALT  &none  &none  &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
     &kp LGUI   &none     &none  &none  &none      &kp FCS_L  &kp WK_L  &kp EXPOSE  &kp WK_R  &kp FCS_R
-                           &none  &none  &to _DEFAULT      &mkp LCLK  &mkp RCLK  &to _DEFAULT
+                         &none  &none  &none      &mkp LCLK  &mkp RCLK  &to _DEFAULT
             >;
         };
     };
