@@ -75,9 +75,9 @@
         mouse_layer {
             label = "MOUSE";
             bindings = <
-    &kp LCTRL  &none     &none  &none  &none      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
-    &kp LSHIFT &kp LALT  &none  &none  &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
-    &kp LGUI   &none     &none  &none  &none      &kp FCS_L  &kp WK_L  &kp EXPOSE  &kp WK_R  &kp FCS_R
+    &kp LCTRL  &none     &kp WRP_7 &kp WRP_8 &kp WRP_9      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
+    &kp LSHIFT &kp LALT  &kp WRP_4 &kp WRP_5 &kp WRP_6      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
+    &kp LGUI   &none     &kp WRP_1 &kp WRP_2 &kp WRP_3      &kp FCS_L  &kp WK_L  &kp EXPOSE  &kp WK_R  &kp FCS_R
                          &none  &none  &none      &mkp LCLK  &mkp RCLK  &to _DEFAULT
             >;
         };
