@@ -1,1 +1,2 @@
+#define MOUSE_KEYS
 #include "includes/3x5_3.dtsi"

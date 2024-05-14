@@ -2,15 +2,20 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-// TODO: conditionally include mousekey stuff
-#include "mouse.dtsi"
-
 // define layers
 #define _DEFAULT 0  // Colemak Dhm
 #define _LOWER 1
 #define _RAISE 2
 #define _STICKY 3
-#define _MOUSE 4
+
+// conditionally include mouse keys
+#ifdef MOUSE_KEYS
+    #include "mouse.dtsi"
+    #define _MOUSE 4
+    #define TO_MOUSE &to _MOUSE
+#else
+    #define TO_MOUSE &none
+#endif
 
 #include "hold-tap-settings.dtsi"
 #include "extra-keycodes.dtsi"
@@ -50,7 +55,7 @@
             label = "EDITOR";
             bindings = <
    &kp SZ_L_23 &kp SZ_L_13 &kp SZ_C_13 &kp SZ_R_13 &kp SZ_R_23      &kp DLL  &kp DWL  &kp DWR &kp DLR   &kp BOD
-   &kp SZ_L_12 &kp SZ_D_12 &kp SZ_MAX  &kp SZ_U_12 &kp SZ_R_12      &kp LEFT &kp DOWN &kp UP  &kp RIGHT &to _MOUSE
+   &kp SZ_L_12 &kp SZ_D_12 &kp SZ_MAX  &kp SZ_U_12 &kp SZ_R_12      &kp LEFT &kp DOWN &kp UP  &kp RIGHT TO_MOUSE
    &kp THRW_L  &kp FCS_L   &trans      &kp FCS_R   &kp THRW_R       &kp MLL  &kp MWL  &kp MWR &kp MLR   &kp EOD
                            &kp ESC &kp TAB  &kp BSPC   &trans   &trans    &trans
             >;
@@ -66,6 +71,7 @@
             >;
         };
 
+    #ifdef MOUSE_KEYS
         mouse_layer {
             label = "MOUSE";
             bindings = <
@@ -75,6 +81,7 @@
                          &none  &none  &none      &mkp LCLK  &mkp RCLK  &to _DEFAULT
             >;
         };
+    #endif
     };
 };
 
