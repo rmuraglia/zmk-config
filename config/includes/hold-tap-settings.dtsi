@@ -1,0 +1,46 @@
+// configure hold tap settings
+
+&lt {
+    flavor = "hold-preferred";
+};
+
+&mt {
+    tapping-term-ms = <150>;  // slightly faster to reduce wait before cmd click
+};
+
+&sl {
+    release-after-ms = <500>;  // basically leader timeout equivalent
+};
+
+// new behaviors for shift tap and mod on alphas
+// lmt: https://zmk.dev/docs/behaviors/hold-tap#example-use-cases based on toggle on tap, momentary on hold layers
+/ {
+    behaviors {
+        st: shift_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHIFT_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <120>;
+            bindings = <&kp>, <&kp>;
+        };
+        am: alpha_mod {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALPHA_MOD";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            retro-tap;
+        };
+        lmt: layer_mo_to {
+            compatible = "zmk,behavior-hold-tap";
+            label = "l_mo_to";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&to>;
+        };
+    };
+};
+

@@ -1,0 +1,45 @@
+// define frequently used keyboard shortcuts
+
+// OS stuff
+#define EXPOSE  LC(UP)      // mission control (aka expose)
+#define OS_LOCK LG(LC(Q))   // lock screen
+#define SNIP    LG(LS(N4))  // screenshot portion of screen
+
+// text editing: cursor movement, text deletion
+#define MWL LA(LEFT)   // move cursor one word left
+#define MWR LA(RIGHT)  // move cursor one word right
+#define MLL LC(A)      // move cursor to beginning of line
+#define MLR LC(E)      // move cursor to end of line
+#define DWL LA(BSPC)   // delete one word left
+#define DWR LA(DEL)    // delete one word right
+#define DLL LC(U)      // delete to beginning of line
+#define DLR LC(K)      // delete to end of line
+#define BOD LG(UP)     // beginning of document
+#define EOD LG(DOWN)   // end of document
+
+// window management (OS native)
+#define WK_L LC(LEFT)  // go to workspace left
+#define WK_R LC(RIGHT) // go to workspace right
+
+// window management (via rectangle)
+#define SZ_L_13 LA(LC(D))      // resize window left 1/3
+#define SZ_C_13 LA(LC(F))      // resize window center 1/3
+#define SZ_R_13 LA(LC(G))      // resize window right 1/3
+#define SZ_L_23 LA(LC(E))      // resize window left 2/3
+#define SZ_R_23 LA(LC(T))      // resize window right 2/3
+#define SZ_L_12 LA(LC(LEFT))   // resize window left 1/2
+#define SZ_R_12 LA(LC(RIGHT))  // resize window right 1/2
+#define SZ_U_12 LA(LC(UP))     // resize window up 1/2
+#define SZ_D_12 LA(LC(DOWN))   // resize window down 1/2
+#define SZ_MAX  LA(LC(ENTER))  // resize window maximize
+#define THRW_L LG(LA(LC(LEFT)))   // throw to workspace left
+#define THRW_R LG(LA(LC(RIGHT)))  // throw to workspace right
+
+// cursor warp (via hammerspoon)
+#define FCS_L LS(LG(LA(LC(L))))  // warp cursor to display left
+#define FCS_R LS(LG(LA(LC(R))))  // warp cursor to display right
+
+// deprecated categories (mostly hammerspoon stuff):
+    // hammerspoon: alerts, emoji finder, quick app shortcuts
+    // warpd cursor util: to be deprecated by warp to region (e.g. numpad centers)
+

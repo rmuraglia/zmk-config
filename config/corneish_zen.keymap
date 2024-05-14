@@ -1,0 +1,7 @@
+#include "includes/3x5_3.dtsi"
+
+/ {
+    chosen {
+        zmk,matrix-transform = &five_column_transform;
+    };
+};
