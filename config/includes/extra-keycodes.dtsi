@@ -40,15 +40,15 @@
 #define FCS_R LS(LG(LA(LC(R))))  // warp cursor to display right
 
 // warp cursor within display to center of numpad N region
-#define WRP_1 LS(LG(LA(LC(N1)))
-#define WRP_2 LS(LG(LA(LC(N2)))
-#define WRP_3 LS(LG(LA(LC(N3)))
-#define WRP_4 LS(LG(LA(LC(N4)))
-#define WRP_5 LS(LG(LA(LC(N5)))
-#define WRP_6 LS(LG(LA(LC(N6)))
-#define WRP_7 LS(LG(LA(LC(N7)))
-#define WRP_8 LS(LG(LA(LC(N8)))
-#define WRP_9 LS(LG(LA(LC(N9)))
+#define WRP_1 LS(LG(LA(LC(N1))))
+#define WRP_2 LS(LG(LA(LC(N2))))
+#define WRP_3 LS(LG(LA(LC(N3))))
+#define WRP_4 LS(LG(LA(LC(N4))))
+#define WRP_5 LS(LG(LA(LC(N5))))
+#define WRP_6 LS(LG(LA(LC(N6))))
+#define WRP_7 LS(LG(LA(LC(N7))))
+#define WRP_8 LS(LG(LA(LC(N8))))
+#define WRP_9 LS(LG(LA(LC(N9))))
 
 // deprecated categories (mostly hammerspoon stuff):
     // hammerspoon: alerts, emoji finder, quick app shortcuts
