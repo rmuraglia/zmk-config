@@ -1,0 +1,5 @@
+// TODO: instead of pulling in the manually triggered mousekeys layer for mouse clicks, can I find a module for an automouse layer?
+// TODO: deprecation note in old bw repo
+
+#define MOUSE_KEYS
+#include "includes/3x5_3.dtsi"
