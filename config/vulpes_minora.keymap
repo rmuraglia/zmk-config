@@ -1,2 +1,8 @@
 #define MOUSE_KEYS
+#define HAS_MOUSE_TP
+
 #include "includes/3x5_3.dtsi"
+
+#ifdef HAS_MOUSE_TP
+    #include "includes/mouse_tp.dtsi"
+#endif

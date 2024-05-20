@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/sadekbaroudi
     - name: caksoylar
       url-base: https://github.com/caksoylar
+    - name: infused-kim
+      url-base: https://github.com/infused-kim
   projects:
     - name: zmk
       remote: caksoylar
@@ -17,5 +19,8 @@ manifest:
       remote: sadekbaroudi
       revision: main
       import: config/deps.yml
+    - name: kb_zmk_ps2_mouse_trackpoint_driver
+      remote: infused-kim
+      revision: main
   self:
     path: config
