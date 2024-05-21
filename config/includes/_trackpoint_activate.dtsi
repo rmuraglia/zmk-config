@@ -1,0 +1,41 @@
+// Trackpoint configuration
+// See https://github.com/infused-kim/kb_zmk_ps2_mouse_trackpoint_driver-zmk_config/commit/3e2687feea694529e9d2444a6b5df2a0823612df for worked example with comments
+
+/*
+NOTE: this is NOT a complete trackpoint config
+This only contains the block to enable the PS2 mouse device from the sample mouse_tp.dtsi file
+I've split them out here just to declutter the file
+*/
+
+// Enable PS/2 Mouse Devices
+// In `your_keyboard_right.overlay` all devices have `status = "disabled"`.
+// So,they are never compiled into the firmware.
+//
+// Here we enable them, but we do it within the #ifdef HAS_MOUSE_TP code
+// block, which prevents compilation and potential build errors when we
+// undefine HAS_MOUSE_TP in corne_tp.keymap
+&mouse_ps2  {
+    status = "okay";
+};
+
+&mouse_ps2_input_listener {
+    status = "okay";
+};
+
+#ifdef MOUSE_PS2_DRIVER_UART
+
+    &uart0 {
+    status = "okay";
+    };
+
+    &uart_ps2 {
+    status="okay";
+    };
+
+#else
+
+    &gpio_ps2  {
+    status = "okay";
+    };
+
+#endif  // MOUSE_PS2_DRIVER_UART

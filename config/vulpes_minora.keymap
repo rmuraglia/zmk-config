@@ -5,4 +5,12 @@
 
 #ifdef HAS_MOUSE_TP
     #include "includes/mouse_tp.dtsi"
+
+    // select the layer to toggle on movement
+    // apply this only to the side with the trackpoint
+    #ifdef MOUSE_PS2_DT_PRESENT
+        &mouse_ps2_input_listener {
+            layer-toggle = <_MOUSE>;
+        };
+    #endif
 #endif

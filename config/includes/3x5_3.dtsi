@@ -10,7 +10,7 @@
 
 // conditionally include mouse keys
 #ifdef MOUSE_KEYS
-    #include "mouse.dtsi"
+    #include "mouse-keys.dtsi"
     #define _MOUSE 4
     #define TO_MOUSE &to _MOUSE
 #else
