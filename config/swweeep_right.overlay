@@ -1,0 +1,22 @@
+// Trackpoint configuration
+// See https://github.com/infused-kim/kb_zmk_ps2_mouse_trackpoint_driver-zmk_config/commit/3e2687feea694529e9d2444a6b5df2a0823612df for worked example with comments
+// See https://github.com/zmkfirmware/zmk/tree/main/app/boards/shields/nice_view_adapter for the pin assignments used for the nice view that we hijacked
+
+// Pick the driver
+#define MOUSE_PS2_DRIVER_UART
+
+// Configure the data (use mosi) and clock (use sck) pins
+#define MOUSE_PS2_PIN_SCL_PRO_MICRO <&pro_micro 3 GPIO_ACTIVE_HIGH>
+#define MOUSE_PS2_PIN_SDA_PRO_MICRO <&pro_micro 2 GPIO_ACTIVE_HIGH>
+#define MOUSE_PS2_PIN_SDA_PINCTRL <NRF_PSEL(UART_RX, 0, 17)>
+
+// Configure the power-on-reset pin (use cs)
+#define MOUSE_PS2_PIN_RST_PRO_MICRO <&pro_micro 1 GPIO_ACTIVE_HIGH>
+
+// Pull in the additional trackpoint configs that you usually do not need to touch
+#include "includes/_trackpoint_overlay.dtsi"
+
+// Configure trackpoint rotation
+&mouse_ps2_input_listener {
+    x-invert;
+};
