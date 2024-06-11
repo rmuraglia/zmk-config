@@ -1,4 +1,5 @@
 #define MOUSE_KEYS
+#define USE_SOFT_OFF
 #define HAS_MOUSE_TP
 
 #include "includes/3x5_3.dtsi"

@@ -17,6 +17,13 @@
     #define TO_MOUSE &none
 #endif
 
+// safe alias for soft off, even if not enabled
+#ifdef USE_SOFT_OFF
+    #define SOFT_OFF &soft_off
+#else
+    #define SOFT_OFF &none
+#endif
+
 #include "hold-tap-settings.dtsi"
 #include "extra-keycodes.dtsi"
 #include "3x5-combos.dtsi"
@@ -66,7 +73,7 @@
             bindings = <
     &kp OS_LOCK  &none     &none  &none  &none      &none  &none  &none  &none  &bt BT_CLR
     &none        &kp SNIP  &none  &none  &none      &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT
-    &bootloader  &none     &none  &none  &none      &none  &none  &none  &none  &bootloader
+    &bootloader  &none     &none  &none  &none      SOFT_OFF   &none  &none  &none  &bootloader
                            &none  &none  &none      &none  &none  &none
             >;
         };
