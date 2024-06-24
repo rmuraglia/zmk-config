@@ -31,8 +31,8 @@ include:
   - board: corneish_zen_v2_left
   - board: corneish_zen_v2_right
   - board: seeeduino_xiao_ble
-    shield: bad_wings
-  - board: seeeduino_xiao_ble
     shield: settings_reset
+  - board: seeeduino_xiao_ble
+    shield: bad_wings rgbled_adapter
   - board: seeeduino_xiao_rp2040
     shield: bad_wings

@@ -22,5 +22,8 @@ manifest:
     - name: kb_zmk_ps2_mouse_trackpoint_driver
       remote: infused-kim
       revision: main
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: main
   self:
     path: config
