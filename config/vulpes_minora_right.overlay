@@ -17,5 +17,5 @@
 
 // Configure trackpoint rotation
 &mouse_ps2_input_listener {
-    x-invert;
+    y-invert;
 };
