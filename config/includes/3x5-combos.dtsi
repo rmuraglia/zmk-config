@@ -42,7 +42,7 @@
             key-positions = <12 13>;
             bindings = <&kp LPAR>;
         };
-        combo_leader {
+        combo_leaderL {
             timeout-ms = <COMBO_TERM>;
             key-positions = <20 21>;
             bindings = <&sl _STICKY>;
@@ -98,10 +98,10 @@
             key-positions = <27 28>;
             bindings = <&kp PIPE>;
         };
-        combo_cmdpal {
+        combo_leaderR {
             timeout-ms = <COMBO_TERM>;
             key-positions = <28 29>;
-            bindings = <&kp LG(LS(P))>;
+            bindings = <&sl _STICKY>;
         };
     };
 };

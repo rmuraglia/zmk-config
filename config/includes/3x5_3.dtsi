@@ -3,6 +3,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#include <behaviors/insomnia.dtsi>
+#include <dt-bindings/zmk/insomnia.h>
+
 // define layers
 #define _DEFAULT 0  // Colemak Dhm
 #define _LOWER 1
@@ -72,10 +75,10 @@
         sticky_layer {
             label = "LEADER";
             bindings = <
-    &kp OS_LOCK  &none     &none  &out OUT_USB  &out OUT_BLE      &none  &none  &none  &none  &bt BT_CLR
-    &none        &kp SNIP  &none  &none         &none             &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT
-    &bootloader  &none     &none  &none         &none             SOFT_OFF   &none  &none  &none  &bootloader
-                           &none  &none         &none             &none  &none  &none
+    &kp OS_LOCK &isa ISA_SLP &kp SNIP    &none        &none       &none      &none       &kp SNIP     &isa ISA_SLP &kp OS_LOCK
+    &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT  &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT
+    &bootloader  &sys_reset &none        &none        SOFT_OFF    SOFT_OFF   &none        &none        &sys_reset   &bootloader
+                    &out OUT_USB  &out OUT_BLE &bt BT_CLR         &bt BT_CLR &out OUT_BLE &out OUT_USB
             >;
         };
 
@@ -84,7 +87,7 @@
             label = "MOUSE";
             bindings = <
     &kp LCTRL  &none     &kp WRP_7 &kp WRP_8 &kp WRP_9      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
-    &kp LSHIFT &kp LALT  &kp WRP_4 &kp WRP_5 &kp WRP_6      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
+    &kp LSHIFT &kp LALT  &kp WRP_4 &kp WRP_5 &kp WRP_6      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &to _DEFAULT
     &kp LGUI   &none     &kp WRP_1 &kp WRP_2 &kp WRP_3      &kp FCS_L  &kp WK_L  &kp EXPOSE  &kp WK_R  &kp FCS_R
                          &none  &none  &none      &mkp LCLK  &mkp RCLK  &to _DEFAULT
             >;

@@ -34,5 +34,7 @@ include:
     shield: settings_reset
   - board: seeeduino_xiao_ble
     shield: bad_wings rgbled_adapter
-  - board: seeeduino_xiao_rp2040
-    shield: bad_wings
+
+# disable wired xiao builds while using insomnia module
+#  - board: seeeduino_xiao_rp2040
+#    shield: bad_wings
