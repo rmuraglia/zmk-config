@@ -10,8 +10,7 @@
     // apply this only to the side with the trackpoint
     #ifdef MOUSE_PS2_DT_PRESENT
         &mouse_ps2_input_listener {
-            // temporarily disable the auto mouse layer while I tweak the mounting mechanism
-            // layer-toggle = <_MOUSE>;
+            layer-toggle = <_MOUSE>;
         };
     #endif
 #endif
