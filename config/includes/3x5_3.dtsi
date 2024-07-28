@@ -11,11 +11,13 @@
 #define _LOWER 1
 #define _RAISE 2
 #define _STICKY 3
+#define _TPMOUSE 4
 
 // conditionally include mouse keys
+// TODO: also make LCLK, MCLK and RCLK in the lower layer safe when mouse keys are not used
 #ifdef MOUSE_KEYS
     #include "mouse-keys.dtsi"
-    #define _MOUSE 4
+    #define _MOUSE 5
     #define TO_MOUSE &to _MOUSE
 #else
     #define TO_MOUSE &none
@@ -58,7 +60,7 @@
    &kp LCTRL  &kp F4   &kp C_VOL_DN  &kp K_MUTE  &kp C_VOL_UP     &kp TAB  &kp N7  &kp N8  &kp N9  &kp PLUS
    &kp LSHIFT &kp LALT &kp WK_L      &kp EXPOSE  &kp WK_R         &kp N0   &kp N4  &kp N5  &kp N6  &kp MINUS
    &kp LGUI   &none    &kp C_PREV    &kp C_PP    &kp C_NEXT       &kp DOT  &kp N1  &kp N2  &kp N3  &kp FSLH
-                                &trans  &trans  &trans                &kp SPACE  &kp ENTER &kp DEL
+                                &trans  &trans  &trans            &mkp LCLK  &mkp MCLK &mkp RCLK
             >;
         };
 
@@ -79,6 +81,16 @@
     &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT  &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT
     &bootloader  &sys_reset &none        &none        SOFT_OFF    SOFT_OFF   &none        &none        &sys_reset   &bootloader
                     &out OUT_USB  &out OUT_BLE &bt BT_CLR         &bt BT_CLR &out OUT_BLE &out OUT_USB
+            >;
+        };
+
+        tp_mouse_layer {
+            label = "TP-MOUSE";
+            bindings = <
+    &trans &trans &trans &trans &trans          &trans &trans &trans &trans &trans
+    &trans &trans &trans &trans &trans          &trans &trans &trans &trans &trans
+    &trans &trans &trans &trans &trans          &trans &trans &trans &trans &trans
+                &kp LGUI &kp LALT &kp LSHIFT    &mkp LCLK  &mkp MCLK &mkp RCLK
             >;
         };
 
