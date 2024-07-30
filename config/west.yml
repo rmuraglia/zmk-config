@@ -14,8 +14,8 @@ manifest:
       url-base: https://github.com/badjeff
   projects:
     - name: zmk
-      remote: caksoylar
-      revision: caksoylar/experimental
+      remote: infused-kim
+      revision: pr-testing/mouse_ps2_module_base
       import: app/west.yml
     - name: zmk-fingerpunch-keyboards
       remote: sadekbaroudi
