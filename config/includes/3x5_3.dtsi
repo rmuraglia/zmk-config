@@ -80,7 +80,7 @@
     &kp OS_LOCK &isa ISA_SLP &kp SNIP    &none        &none       &none      &none       &kp SNIP     &isa ISA_SLP &kp OS_LOCK
     &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT  &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT
     &bootloader  &sys_reset &none        &none        SOFT_OFF    SOFT_OFF   &none        &none        &sys_reset   &bootloader
-                    &out OUT_USB  &out OUT_BLE &bt BT_CLR         &bt BT_CLR &out OUT_BLE &out OUT_USB
+                    &bt BT_CLR &out OUT_USB  &out OUT_BLE          &out OUT_BLE &out OUT_USB &bt BT_CLR
             >;
         };
 
