@@ -39,7 +39,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            label = "BASE";
+            display-name = "BASE";
 // -----------------------------------------------------------------------------------------
 //      |  Q  |  W  |  F  |  P  |  B  |            |  J  |  L  |  U  |  Y  |  '  |
 //      |  A  |  R  |  S  |  T  |  G  |            |  M  |  N  |  E  |  I  |  O  |
@@ -55,7 +55,7 @@
         };
 
         lower_layer {
-            label = "SYSNUM";
+            display-name = "SYSNUM";
             bindings = <
    &kp LCTRL  &kp F4   &kp C_VOL_DN  &kp K_MUTE  &kp C_VOL_UP     &kp TAB  &kp N7  &kp N8  &kp N9  &kp PLUS
    &kp LSHIFT &kp LALT &kp WK_L      &kp EXPOSE  &kp WK_R         &kp N0   &kp N4  &kp N5  &kp N6  &kp MINUS
@@ -65,7 +65,7 @@
         };
 
         raise_layer {
-            label = "EDITOR";
+            display-name = "EDITOR";
             bindings = <
    &kp SZ_L_23 &kp SZ_L_13 &kp SZ_C_13 &kp SZ_R_13 &kp SZ_R_23      &kp DLL  &kp DWL  &kp DWR &kp DLR   &kp BOD
    &kp SZ_L_12 &kp SZ_D_12 &kp SZ_MAX  &kp SZ_U_12 &kp SZ_R_12      &kp LEFT &kp DOWN &kp UP  &kp RIGHT TO_MOUSE
@@ -75,7 +75,7 @@
         };
 
         sticky_layer {
-            label = "LEADER";
+            display-name = "LEADER";
             bindings = <
     &kp OS_LOCK &isa ISA_SLP &kp SNIP    &none        &none       &none      &none       &kp SNIP     &isa ISA_SLP &kp OS_LOCK
     &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT  &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT
@@ -85,7 +85,7 @@
         };
 
         tp_mouse_layer {
-            label = "TP-MOUSE";
+            display-name = "TP-MOUSE";
             bindings = <
     &trans &trans &trans &trans &trans          &trans &trans &trans &trans &trans
     &trans &trans &trans &trans &trans          &trans &trans &trans &trans &trans
@@ -96,7 +96,7 @@
 
     #ifdef MOUSE_KEYS
         mouse_layer {
-            label = "MOUSE";
+            display-name = "MOUSE";
             bindings = <
     &kp LCTRL  &none     &kp WRP_7 &kp WRP_8 &kp WRP_9      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
     &kp LSHIFT &kp LALT  &kp WRP_4 &kp WRP_5 &kp WRP_6      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &to _DEFAULT
