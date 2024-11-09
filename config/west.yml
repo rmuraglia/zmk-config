@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/infused-kim
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: rmuraglia
+      url-base: https://github.com/rmuraglia
   projects:
     - name: zmk
       remote: infused-kim
@@ -29,6 +31,9 @@ manifest:
       revision: main
     - name: zmk-behavior-insomnia
       remote: badjeff
+      revision: main
+    - name: zmk-keyboards-menura
+      remote: rmuraglia
       revision: main
   self:
     path: config

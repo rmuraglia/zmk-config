@@ -1,0 +1,10 @@
+#define MOUSE_KEYS
+#include "includes/3x5_3.dtsi"
+
+/ {
+    chosen {
+        zmk,physical-layout = &default_layout;
+        zmk,kscan = &kscan0;
+        zmk,matrix-transform = &default_transform;
+    };
+};
