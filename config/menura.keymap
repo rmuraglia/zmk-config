@@ -3,7 +3,7 @@
 
 / {
     chosen {
-        zmk,physical-layout = &menura_3x5_3_layout;
+        zmk,physical-layout = &default_layout;
         zmk,kscan = &kscan0;
         zmk,matrix-transform = &transform_3x5_3;
     };

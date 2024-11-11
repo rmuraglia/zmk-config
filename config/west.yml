@@ -34,6 +34,6 @@ manifest:
       revision: main
     - name: zmk-keyboards-menura
       remote: rmuraglia
-      revision: main
+      revision: no-studio
   self:
     path: config
