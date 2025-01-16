@@ -24,7 +24,7 @@ manifest:
       revision: main
       import: config/deps.yml
     - name: kb_zmk_ps2_mouse_trackpoint_driver
-      remote: infused-kim
+      remote: badjeff
       revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
