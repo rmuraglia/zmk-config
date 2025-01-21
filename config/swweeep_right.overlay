@@ -17,6 +17,6 @@
 #include "includes/_trackpoint_overlay.dtsi"
 
 // Configure trackpoint rotation
-&mouse_ps2_input_listener {
-    y-invert;
-};
+// &mouse_ps2_input_listener {
+//     y-invert;
+// };
