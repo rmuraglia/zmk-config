@@ -8,9 +8,9 @@
 
     // select the layer to toggle on movement
     // apply this only to the side with the trackpoint
-    #ifdef MOUSE_PS2_DT_PRESENT
-        &mouse_ps2_input_listener {
-            layer-toggle = <_TPMOUSE>;
-        };
-    #endif
+    // #ifdef MOUSE_PS2_DT_PRESENT
+    //     &mouse_ps2_input_listener {
+    //         layer-toggle = <_TPMOUSE>;
+    //     };
+    // #endif
 #endif

@@ -20,6 +20,7 @@ I've split them out here just to declutter the file
 
 &mouse_ps2_input_listener {
     status = "okay";
+    device = <&mouse_ps2>;
 };
 
 #ifdef MOUSE_PS2_DRIVER_UART

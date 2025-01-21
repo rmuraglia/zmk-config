@@ -4,6 +4,14 @@
   // pull in the custom trackpoint keycodes
   #include "_trackpoint_keycodes.dtsi"
 
+  // define the shared listener
+  /{
+    mouse_ps2_input_listener: mouse_ps2_input_listener {
+      compatible = "zmk,input-listener";
+      status = "disabled";
+    };
+  };
+  
   // Only apply these settings on the side that has the TP connected
   // (usually the right side)
   #ifdef MOUSE_PS2_DT_PRESENT
