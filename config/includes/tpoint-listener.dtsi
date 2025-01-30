@@ -1,0 +1,6 @@
+/{
+    tpoint_listener: tpoint_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+    };
+};
