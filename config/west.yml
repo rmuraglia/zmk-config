@@ -16,7 +16,7 @@ manifest:
       url-base: https://github.com/rmuraglia
   projects:
     - name: zmk
-      remote: badjeff
+      remote: zmkfirmware
       revision: main
       import: app/west.yml
     - name: zmk-fingerpunch-keyboards
