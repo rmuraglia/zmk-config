@@ -2,12 +2,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-// try tossing in a bunch of includes from filippo's config
-#include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/mouse_settings.h>
-#include <behaviors/mouse_keys.dtsi>
-#include <behaviors/mouse_setting.dtsi>
-
 
 / {
     keymap {
