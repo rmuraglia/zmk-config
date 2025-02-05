@@ -16,24 +16,24 @@ manifest:
       url-base: https://github.com/rmuraglia
   projects:
     - name: zmk
-      remote: infused-kim
-      revision: pr-testing/mouse_ps2_module_base
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
-    - name: zmk-fingerpunch-keyboards
-      remote: sadekbaroudi
-      revision: main
-      import: config/deps.yml
-    - name: kb_zmk_ps2_mouse_trackpoint_driver
-      remote: infused-kim
-      revision: main
-    - name: zmk-rgbled-widget
-      remote: caksoylar
-      revision: main
+    # - name: zmk-fingerpunch-keyboards
+    #   remote: sadekbaroudi
+    #   revision: main
+    #   import: config/deps.yml
+    # - name: kb_zmk_ps2_mouse_trackpoint_driver
+    #   remote: infused-kim
+    #   revision: main
+    # - name: zmk-rgbled-widget
+    #   remote: caksoylar
+    #   revision: main
     - name: zmk-behavior-insomnia
       remote: badjeff
       revision: main
     - name: zmk-keyboards-menura
       remote: rmuraglia
-      revision: no-studio
+      revision: dongle
   self:
     path: config
