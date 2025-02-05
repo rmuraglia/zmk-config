@@ -109,6 +109,7 @@
 
 / {
     combos {
+        compatible = "zmk,combos";
         combo_rbrc {
             timeout-ms = <COMBO_TERM>;
             key-positions = <0 1>;
