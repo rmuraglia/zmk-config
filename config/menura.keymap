@@ -171,6 +171,51 @@
             key-positions = <5 6>;
             bindings = <&kp J>;
         };
+        combo_equal {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <6 7>;
+            bindings = <&kp EQUAL>;
+        };
+        combo_plus {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <7 8>;
+            bindings = <&kp PLUS>;
+        };
+        combo_semi {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <8 9>;
+            bindings = <&kp SEMI>;
+        };
+        combo_minus {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <16 17>;
+            bindings = <&kp MINUS>;
+        };
+        combo_under {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <17 18>;
+            bindings = <&kp UNDER>;
+        };
+        combo_colon {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <18 19>;
+            bindings = <&kp COLON>;
+        };
+        combo_bslh {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <23 24>;
+            bindings = <&kp BSLH>;
+        };
+        combo_fslh {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <24 25>;
+            bindings = <&kp FSLH>;
+        };
+        combo_stickyR {
+            timeout-ms = <COMBO_TERM>;
+            key-positions = <23 30>;
+            bindings = <&sl _STICKY>;
+        };
     };
 };
 
@@ -211,7 +256,7 @@
         sticky_layer {
             display-name = "LEADER";
             bindings = <
-    &kp OS_LOCK &isa ISA_SLP &kp SNIP    &none        &none       &none      &none       &kp SNIP     &isa ISA_SLP &kp OS_LOCK
+    &kp OS_LOCK &none &kp SNIP    &none        &none       &none      &none       &kp SNIP     &none &kp OS_LOCK
     &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT  &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT
     &bootloader  &sys_reset     &none &none &sys_reset   &bootloader
                     &bt BT_CLR &none &none &none &none &bt BT_CLR
