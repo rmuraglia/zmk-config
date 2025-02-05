@@ -5,7 +5,6 @@
 / {
     chosen {
         zmk,physical-layout = &menura_23332_3_layout;
-        zmk,kscan = &kscan0;
     };
 };
 
