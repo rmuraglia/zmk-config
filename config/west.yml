@@ -14,6 +14,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: rmuraglia
       url-base: https://github.com/rmuraglia
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -35,5 +37,8 @@ manifest:
     - name: zmk-keyboards-menura
       remote: rmuraglia
       revision: dongle
+    - name: zmk-dongle-display-view
+      remote: mctechnology17
+      revision: main
   self:
     path: config
